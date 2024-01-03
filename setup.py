@@ -168,7 +168,7 @@ setup(
     cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
     test_suite="tests.python",
-    python_requires=">=3.6",
+    python_requires=">=3.8",
     setup_requires=[
         "setuptools",
         "wheel",
