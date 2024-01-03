@@ -61,19 +61,7 @@ namespace ioh::problem
 namespace ioh::common
 {
 
-    void printStackTrace() {
-        const int MAX_CALLSTACK_SIZE = 128;
-        void *callstack[MAX_CALLSTACK_SIZE];
-        int stackSize = backtrace(callstack, MAX_CALLSTACK_SIZE);
-        char **symbols = backtrace_symbols(callstack, stackSize);
 
-        std::cerr << "Call Stack:" << std::endl;
-        for (int i = 0; i < stackSize; i++) {
-            std::cerr << symbols[i] << std::endl;
-        }
-
-        free(symbols);
-    }
 
     //! Function to get the next non zero value in an array of integers
     inline int get_next_id(const std::vector<int> &ids)
@@ -152,8 +140,6 @@ namespace ioh::common
                 // Output the error message to both std::cerr and std::cout
                 std::cerr << error_message << std::endl;
                 std::cout << error_message << std::endl;
-
-                printStackTrace();
 
                 assert(!already_defined && name.c_str());
             }
