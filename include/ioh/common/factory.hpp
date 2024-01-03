@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <cassert>
 #include <cstdlib>
-#include <execinfo.h>
 #include <functional>
 #include <iostream>
 #include <map>
@@ -16,6 +15,7 @@
 
 #if defined(__GNUC__) || defined(__GNUG__)
 #include <cxxabi.h>
+#include <execinfo.h>
 #endif
 
 #include "container_utils.hpp"
